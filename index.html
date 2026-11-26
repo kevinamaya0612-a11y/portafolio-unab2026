@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portafolio Web - Multimedia UNAB</title>
+
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- FontAwesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Configuración personalizada de Tailwind -->
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+      colors: {
+        // Negros cálidos (reemplazan al gris azulado del profe)
+        slate: {50:'#faf6f0',100:'#f5efe6',200:'#e8dfd2',300:'#d3c8b8',400:'#a99f93',500:'#8a8075',600:'#4a4244',700:'#322b2d',800:'#221c1e',900:'#141011',950:'#080607'},
+        // Rojo butaca de cine (reemplaza al azul)
+        blue: {300:'#f87171',400:'#ef4444',500:'#dc2626',600:'#b91c1c',700:'#991b1b',800:'#7f1d1d'},
+        // Dorado
+        gold: {300:'#f2dc9b',400:'#e6bf5a',500:'#c9a227'}
+      }
+    }
+  }
+}
+</script>
+<!-- Estilos propios (cine) -->
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col selection:bg-blue-500 selection:text-white">
+
+<!-- NAVEGACIÓN -->
+<nav class="sticky top-0 z-40 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo + Nombre del equipo -->
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-blue-600 to-blue-800 ring-1 ring-gold-400/60 flex items-center justify-center font-bold text-xl text-white shadow-lg shadow-blue-500/20">
+          <i class="fa-solid fa-film"></i>
+        </div>
+        <div>
+          <span class="font-bold text-lg text-white block leading-none">StoryLine</span>
+          <span class="text-xs text-slate-400">Facultad de Tecnología e Innovación</span>
+        </div>
+      </div>
+      <!-- Links Desktop -->
+      <div class="hidden md:flex space-x-8 text-sm font-medium">
+        <a href="#inicio" class="hover:text-gold-400 transition-colors">Inicio</a>
+        <a href="#equipo" class="hover:text-gold-400 transition-colors">Equipo</a>
+        <a href="#portafolio" class="hover:text-gold-400 transition-colors">Portafolio</a>
+        <a href="#creditos" class="hover:text-gold-400 transition-colors">Créditos</a>
+      </div>
+      <!-- Botón GitHub (Desktop) -->
+      <div class="hidden md:block">
+        <!-- CAMBIA el enlace por el de tu repositorio -->
+        <a href="https://github.com/kevinamaya0612-a11y/StoryLine2026.git" target="_blank" class="px-4 py-2 text-xs font-semibold rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition flex items-center gap-2">
+          <i class="fa-brands fa-github text-base"></i> Repositorio
+        </a>
+      </div>
+      <!-- Botón menú móvil -->
+      <button id="mobile-menu-btn" aria-label="Abrir menú" class="md:hidden text-slate-300 hover:text-white focus:outline-none">
+        <i class="fa-solid fa-bars text-xl"></i>
+      </button>
+    </div>
+  </div>
+  <!-- Menú móvil (oculto por defecto) -->
+  <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-4 space-y-2 text-sm">
+    <a href="#inicio" class="block py-2 text-slate-300 hover:text-white">Inicio</a>
+    <a href="#equipo" class="block py-2 text-slate-300 hover:text-white">Equipo</a>
+    <a href="#portafolio" class="block py-2 text-slate-300 hover:text-white">Portafolio</a>
+    <a href="#creditos" class="block py-2 text-slate-300 hover:text-white">Créditos</a>
+  </div>
+</nav>
+
+<main>
+<!-- SECTION 1: INICIO -->
+<section id="inicio" class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-gradient-to-b from-slate-900 to-slate-950 border-b border-slate-800/80">
+  <div class="drape l"></div><div class="drape r"></div>
+  <div class="beam"></div>
+  <div class="valance"><div class="bar"></div><div class="scallops"></div></div>
+  <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse at 75% 35%,rgba(220,38,38,.28),transparent 55%),radial-gradient(ellipse at 15% 90%,rgba(201,162,39,.10),transparent 50%)"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Texto -->
+      <div class="space-y-6 text-center md:text-left">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-400/10 border border-gold-400/30 text-gold-400 text-xs font-semibold">
+          <i class="fa-solid fa-graduation-cap"></i> Universidad Dr. Andrés Bello
+        </div>
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
+          Portafolio Digital <br>
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500">Multimedia 2026</span>
+        </h1>
+        <p class="text-slate-400 text-base md:text-lg max-w-xl">
+          Bienvenido a la vitrina de proyectos del <strong class="text-slate-200">StoryLine</strong>. Muestra oficial de proyectos desarrollados en la asignatura <em class="text-slate-300">Software de Diseño y Edición Multimedia</em>, carrera <strong class="text-slate-200">Ingeniería en Sistemas y Computación y Diseño Grafico</strong>.
+        </p>
+        <!-- Tags de herramientas -->
+        <div class="flex flex-wrap gap-3 justify-center md:justify-start text-xs font-semibold">
+          <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 border border-slate-700/60"><i class="fa-solid fa-image text-amber-400 mr-1.5"></i>GIMP</span>
+          <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 border border-slate-700/60"><i class="fa-solid fa-pen-nib text-red-400 mr-1.5"></i>Inkscape</span>
+          <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 border border-slate-700/60"><i class="fa-solid fa-wave-square text-yellow-400 mr-1.5"></i>Audacity</span>
+          <span class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 border border-slate-700/60"><i class="fa-solid fa-video text-rose-400 mr-1.5"></i>OpenShot</span>
+        </div>
+        <!-- Botones CTA -->
+        <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <a href="#portafolio" class="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold transition shadow-lg shadow-blue-600/30 text-center">
+            Explorar Trabajos <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+          </a>
+          <a href="#equipo" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold border border-slate-700 transition text-center">
+            Conocer al Equipo
+          </a>
+        </div>
+      </div>
+      <!-- Contenedor del Logo del equipo -->
+      <div class="flex justify-center">
+        <div class="marquee-frame relative w-80 h-80 md:w-[28rem] md:h-[28rem] rounded-3xl bg-slate-900 border border-slate-800 p-6 flex flex-col items-center justify-center shadow-2xl shadow-red-900/40 group hover:border-gold-400/50 transition duration-500">
+          <div class="relative w-56 h-56 md:w-72 md:h-72 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center mb-4 text-gold-400 group-hover:scale-105 transition duration-500 overflow-hidden">
+            <i class="fa-solid fa-cubes-stacked text-6xl"></i>
+            <!-- Logo del equipo (Inkscape): guárdalo como img/logo.png o img/logo.svg -->
+            <img src="img/logp.jpg" alt="Logo del equipo" class="absolute inset-0 w-full h-full object-contain p-2" onerror="this.style.display='none'">
+          </div>
+          <p class="text-xs text-slate-400 mt-1 text-center">Identidad visual creada en Inkscape</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARTELERA -->
+<div class="ticker" aria-hidden="true"><div>★ En cartelera ★ Estreno 2026 ★ GIMP ★ Inkscape ★ Audacity ★ OpenShot ★ Portafolio multimedia UNAB ★ En cartelera ★ Estreno 2026 ★ GIMP ★ Inkscape ★ Audacity ★ OpenShot ★ Portafolio multimedia UNAB ★&nbsp;</div></div>
+
+<!-- SECTION 2: EQUIPO -->
+<section id="equipo" class="py-20 bg-slate-950 border-b border-slate-800/80">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <h2 class="text-xs font-bold uppercase tracking-widest text-gold-400 mb-2">Reparto Principal</h2>
+      <h3 class="text-3xl font-extrabold text-white">Nuestro Equipo de Trabajo</h3>
+      <p class="text-slate-400 text-sm mt-3">Equipo colaborativo conformado por 11 integrantes. Cada uno participó en el diseño, la programación y la curaduría de los trabajos.</p>
+    </div>
+    <!-- Grid de 11 tarjetas (copia y pega una tarjeta para agregar más) -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 text-center hover:border-blue-500/50 transition group">
+        <div class="relative w-20 h-20 rounded-full mx-auto mb-3 bg-slate-800 border-2 border-slate-700 group-hover:border-blue-500 transition overflow-hidden flex items-center justify-center text-slate-500">
+          <i class="fa-solid fa-user text-2xl"></i>
+          <!-- Foto editada en GIMP: guárdala en img/ y ajusta el nombre del archivo -->
+          <img src="img/integrante-1.jpeg" alt="Foto de Nombre Estudiante 1" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+        </div>
+        <h4 class="font-semibold text-sm text-slate-100">Kevin Alexander Amaya Velis</h4>
+        <p class="text-xs text-gold-400 font-medium mt-0.5">Coordinador General y Programador Front-end</p>
+        <span class="inline-block mt-2 text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">Gestión, Programador</span>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 text-center hover:border-blue-500/50 transition group">
+        <div class="relative w-20 h-20 rounded-full mx-auto mb-3 bg-slate-800 border-2 border-slate-700 group-hover:border-blue-500 transition overflow-hidden flex items-center justify-center text-slate-500">
+          <i class="fa-solid fa-user text-2xl"></i>
+          <!-- Foto editada en GIMP: guárdala en img/ y ajusta el nombre del archivo -->
+          <img src="img/integrante-2.jpg.jpeg" alt="Foto de Nombre Estudiante 2" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+        </div>
+        <h4 class="font-semibold text-sm text-slate-100">Héctor David Vásquez Villalobos</h4>
+        <p class="text-xs text-gold-400 font-medium mt-0.5">Diseñador colaborador</p>
+        <span class="inline-block mt-2 text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">Diseño</span>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 text-center hover:border-blue-500/50 transition group">
+        <div class="relative w-20 h-20 rounded-full mx-auto mb-3 bg-slate-800 border-2 border-slate-700 group-hover:border-blue-500 transition overflow-hidden flex items-center justify-center text-slate-500">
+          <i class="fa-solid fa-user text-2xl"></i>
+          <!-- Foto editada en GIMP: guárdala en img/ y ajusta el nombre del archivo -->
+          <img src="img/integrante-3.jpg.jpeg" alt="Foto de Nombre Estudiante 3" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+        </div>
+        <h4 class="font-semibold text-sm text-slate-100">Reyna Elizabeth Campos Cruz</h4>
+        <p class="text-xs text-gold-400 font-medium mt-0.5">Diseñadora colaboradora</p>
+        <span class="inline-block mt-2 text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">Diseño</span>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 text-center hover:border-blue-500/50 transition group">
+        <div class="relative w-20 h-20 rounded-full mx-auto mb-3 bg-slate-800 border-2 border-slate-700 group-hover:border-blue-500 transition overflow-hidden flex items-center justify-center text-slate-500">
+          <i class="fa-solid fa-user text-2xl"></i>
+          <!-- Foto editada en GIMP: guárdala en img/ y ajusta el nombre del archivo -->
+          <img src="img/integrante-4.jpeg " alt="Foto de Nombre Estudiante 4" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+        </div>
+        <h4 class="font-semibold text-sm text-slate-100">Julio Antonio Alvarenga Campos</h4>
+        <p class="text-xs text-gold-400 font-medium mt-0.5">Diseñador colaborador</p>
+        <span class="inline-block mt-2 text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">Diseño</span>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 text-center hover:border-blue-500/50 transition group">
+        <div class="relative w-20 h-20 rounded-full mx-auto mb-3 bg-slate-800 border-2 border-slate-700 group-hover:border-blue-500 transition overflow-hidden flex items-center justify-center text-slate-500">
+          <i class="fa-solid fa-user text-2xl"></i>
+          <!-- Foto editada en GIMP: guárdala en img/ y ajusta el nombre del archivo -->
+          <img src="img/integrante-5.jpeg " alt="Foto de Nombre Estudiante 5" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+        </div>
+        <h4 class="font-semibold text-sm text-slate-100">Crista Magali Villeda Ramirez</h4>
+        <p class="text-xs text-gold-400 font-medium mt-0.5">Diseñadora colaboradora</p>
+        <span class="inline-block mt-2 text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">Diseño</span>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 text-center hover:border-blue-500/50 transition group">
+        <div class="relative w-20 h-20 rounded-full mx-auto mb-3 bg-slate-800 border-2 border-slate-700 group-hover:border-blue-500 transition overflow-hidden flex items-center justify-center text-slate-500">
+          <i class="fa-solid fa-user text-2xl"></i>
+          <!-- Foto editada en GIMP: guárdala en img/ y ajusta el nombre del archivo -->
+          <img src="img/integrante-6.jpeg" alt="Foto de Nombre Estudiante 6" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+        </div>
+        <h4 class="font-semibold text-sm text-slate-100">Pamela Guadalupe Bran Sanchez</h4>
+        <p class="text-xs text-gold-400 font-medium mt-0.5">Diseñadora colaboradora</p>
+        <span class="inline-block mt-2 text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">Diseño</span>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 text-center hover:border-blue-500/50 transition group">
+        <div class="relative w-20 h-20 rounded-full mx-auto mb-3 bg-slate-800 border-2 border-slate-700 group-hover:border-blue-500 transition overflow-hidden flex items-center justify-center text-slate-500">
+          <i class="fa-solid fa-user text-2xl"></i>
+          <!-- Foto editada en GIMP: guárdala en img/ y ajusta el nombre del archivo -->
+          <img src="img/integrante-7.jpeg" alt="Foto de Nombre Estudiante 7" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+        </div>
+        <h4 class="font-semibold text-sm text-slate-100">Marvin Ruben Medina Arevalo</h4>
+        <p class="text-xs text-gold-400 font-medium mt-0.5">Diseñador gráfico</p>
+        <span class="inline-block mt-2 text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">Diseño</span>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 text-center hover:border-blue-500/50 transition group">
+        <div class="relative w-20 h-20 rounded-full mx-auto mb-3 bg-slate-800 border-2 border-slate-700 group-hover:border-blue-500 transition overflow-hidden flex items-center justify-center text-slate-500">
+          <i class="fa-solid fa-user text-2xl"></i>
+          <!-- Foto editada en GIMP: guárdala en img/ y ajusta el nombre del archivo -->
+          <img src="img/integrante-8.jpeg" alt="Foto de Nombre Estudiante 8" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+        </div>
+        <h4 class="font-semibold text-sm text-slate-100">Ana Lucía Castillo Sánchez</h4>
+        <p class="text-xs text-gold-400 font-medium mt-0.5">Diseñadora colaboradora</p>
+        <span class="inline-block mt-2 text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">Diseño</span>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 text-center hover:border-blue-500/50 transition group">
+        <div class="relative w-20 h-20 rounded-full mx-auto mb-3 bg-slate-800 border-2 border-slate-700 group-hover:border-blue-500 transition overflow-hidden flex items-center justify-center text-slate-500">
+          <i class="fa-solid fa-user text-2xl"></i>
+          <!-- Foto editada en GIMP: guárdala en img/ y ajusta el nombre del archivo -->
+          <img src="img/integrante-9.jpeg" alt="Foto de Nombre Estudiante 9" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+        </div>
+        <h4 class="font-semibold text-sm text-slate-100">Carlos Antonio Arguera Pérez</h4>
+        <p class="text-xs text-gold-400 font-medium mt-0.5">Diseñador de Contenido</p>
+        <span class="inline-block mt-2 text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">Diseño</span>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 text-center hover:border-blue-500/50 transition group">
+        <div class="relative w-20 h-20 rounded-full mx-auto mb-3 bg-slate-800 border-2 border-slate-700 group-hover:border-blue-500 transition overflow-hidden flex items-center justify-center text-slate-500">
+          <i class="fa-solid fa-user text-2xl"></i>
+          <!-- Foto editada en GIMP: guárdala en img/ y ajusta el nombre del archivo -->
+          <img src="img/integrante-10.jpeg" alt="Foto de Nombre Estudiante 10" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+        </div>
+        <h4 class="font-semibold text-sm text-slate-100">Marly Stefany García López</h4>
+        <p class="text-xs text-gold-400 font-medium mt-0.5">Pruebas y Calidad</p>
+        <span class="inline-block mt-2 text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">Diseño</span>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 text-center hover:border-blue-500/50 transition group">
+        <div class="relative w-20 h-20 rounded-full mx-auto mb-3 bg-slate-800 border-2 border-slate-700 group-hover:border-blue-500 transition overflow-hidden flex items-center justify-center text-slate-500">
+          <i class="fa-solid fa-user text-2xl"></i>
+          <!-- Foto editada en GIMP: guárdala en img/ y ajusta el nombre del archivo -->
+          <img src="img/integrante-11.jpg" alt="Foto de Nombre Estudiante 11" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+        </div>
+        <h4 class="font-semibold text-sm text-slate-100">Alejandra Elizabeth Martinez Prudencio</h4>
+        <p class="text-xs text-gold-400 font-medium mt-0.5">Pruebas y Calidad</p>
+        <span class="inline-block mt-2 text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">Diseño</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="film-strip" aria-hidden="true"></div>
+
+<!-- SECTION 3: PORTAFOLIO -->
+<section id="portafolio" class="py-20 bg-slate-900 border-b border-slate-800/80">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <h2 class="text-xs font-bold uppercase tracking-widest text-gold-400 mb-2">En Cartelera</h2>
+      <h3 class="text-3xl font-extrabold text-white">Muestra Multimedia</h3>
+      <p class="text-slate-400 text-sm mt-2">Explora los trabajos seleccionados por el equipo durante las cuatro unidades de la asignatura.</p>
+    </div>
+
+    <!-- Botones de filtro -->
+    <div class="flex flex-wrap justify-center gap-2 mb-12" id="filter-buttons">
+      <button data-filter="all" class="filter-btn active px-4 py-2 rounded-xl text-xs font-semibold bg-blue-600 text-white transition">Todos</button>
+      <button data-filter="gimp" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 border border-slate-700 transition"><i class="fa-solid fa-image text-amber-400 mr-1"></i> GIMP</button>
+      <button data-filter="inkscape" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 border border-slate-700 transition"><i class="fa-solid fa-pen-nib text-red-400 mr-1"></i> Inkscape</button>
+      <button data-filter="audacity" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 border border-slate-700 transition"><i class="fa-solid fa-wave-square text-yellow-400 mr-1"></i> Audacity</button>
+      <button data-filter="video" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 border border-slate-700 transition"><i class="fa-solid fa-video text-rose-400 mr-1"></i> Video</button>
+      <button data-filter="campana" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 border border-slate-700 transition"><i class="fa-solid fa-bullhorn text-orange-400 mr-1"></i> Campañas</button>
+    </div>
+
+    <!-- Grid de proyectos (copia y pega una tarjeta para agregar más; cambia la clase gimp/inkscape/audacity/video/campana) -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+
+        <div class="project-card gimp bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl shadow-black/60 hover:border-red-600/60 hover:shadow-red-900/40 transition">
+          <div class="relative h-48 overflow-hidden bg-slate-900 flex items-center justify-center text-slate-700">
+            <i class="fa-solid fa-image text-5xl"></i>
+
+            <!-- Preview: guarda la imagen en img/ con este nombre -->
+            <img src="img/gimp-1.png" alt="Vista previa de Retoque Digital y Fotomontaje" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-amber-600/90 text-white text-[10px] font-bold">GIMP</span>
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-base text-slate-100 mb-2">Creatividad Grafica</h4>
+            <h4 class="font-bold text-base text-slate-100 mb-2">Diseñador: Carlos Argueta</h4>
+            <p class="text-xs text-slate-400 line-clamp-2 mb-4">Descripción corta del trabajo: En este proyecto se exploró la creatividad gráfica utilizando GIMP.</p>
+            <div class="flex items-center justify-between pt-3 border-t border-slate-800">
+              <button onclick="openModal('Creatividad Gráfica','GIMP','Crear una mascota con personalidad propia que represente a una marca o proyecto, con un estilo amigable y fácil de recordar.','Aprendí a construir un personaje por partes usando capas y selecciones, y a mantener una paleta de colores coherente en toda la imagen.','img/gimp-1.png','img/gimp-1.png','img/gimp-1.png','image')"
+                class="text-xs text-gold-400 hover:text-gold-300 font-semibold transition">Ver trabajo</button>
+              <a href="img/gimp-1.png" download class="text-xs text-slate-500 hover:text-slate-300 transition"><i class="fa-solid fa-download"></i> Original</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card gimp bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl shadow-black/60 hover:border-red-600/60 hover:shadow-red-900/40 transition">
+          <div class="relative h-48 overflow-hidden bg-slate-900 flex items-center justify-center text-slate-700">
+            <i class="fa-solid fa-image text-5xl"></i>
+            <!-- Preview: guarda la imagen en img/ con este nombre -->
+            <img src="img/gimp-2.png" alt="Vista previa de Antes / Después" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-amber-600/90 text-white text-[10px] font-bold">GIMP</span>
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-base text-slate-100 mb-2">Edición de Imágenes</h4>
+            <h4 class="font-bold text-base text-slate-100 mb-2">Diseñador: Pamela Bran</h4>
+            <p class="text-xs text-slate-400 line-clamp-2 mb-4">Descripción corta del trabajo: Retoque de una imagen en GIMP con curvas, niveles y máscaras de capa para mejorar color e integración.</p>
+            <div class="flex items-center justify-between pt-3 border-t border-slate-800">
+              <button onclick="openModal('Edición de Imágenes','GIMP','Mostrar la transformación de una imagen original a una versión retocada, con mejor color, luz e integración entre el personaje y el paisaje.','Aprendí a corregir color y contraste con curvas y niveles, y a mezclar elementos con máscaras de capa para que la composición se vea natural.','img/gimp-2.png','img/gimp-2.png','img/gimp-2.png','image')"
+                class="text-xs text-gold-400 hover:text-gold-300 font-semibold transition">Ver trabajo</button>
+              <a href="img/gimp-2.png" download class="text-xs text-slate-500 hover:text-slate-300 transition"><i class="fa-solid fa-download"></i> Original</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card gimp bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl shadow-black/60 hover:border-red-600/60 hover:shadow-red-900/40 transition">
+          <div class="relative h-48 overflow-hidden bg-slate-900 flex items-center justify-center text-slate-700">
+            <i class="fa-solid fa-image text-5xl"></i>
+            <!-- Preview: guarda la imagen en img/ con este nombre -->
+            <img src="img/gimp-3.svg" alt="Vista previa de Composición Creativa" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-amber-600/90 text-white text-[10px] font-bold">GIMP</span>
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-base text-slate-100 mb-2">Composición Creativa</h4>
+            <h4 class="font-bold text-base text-slate-100 mb-2">Diseñador: Kevin Amaya</h4>
+            <p class="text-xs text-slate-400 line-clamp-2 mb-4">Descripción corta del trabajo: ieza visual a partir de un ícono, combinando formas, degradados y modos de fusión en GIMP.</p>
+            <div class="flex items-center justify-between pt-3 border-t border-slate-800">
+              <button onclick="openModal('Composición Creativa','GIMP','Armar una composición llamativa a partir de un ícono reconocible, combinando formas, colores y degradados.','Aprendí a recortar formas, usar modos de fusión de capas y crear jerarquía visual para que la pieza tenga impacto.','img/gimp-3.svg','img/gimp-3.svg','img/gimp-3.svg','image')"
+                class="text-xs text-gold-400 hover:text-gold-300 font-semibold transition">Ver trabajo</button>
+              <a href="img/gimp-3.svg" download class="text-xs text-slate-500 hover:text-slate-300 transition"><i class="fa-solid fa-download"></i> Original</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card inkscape bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl shadow-black/60 hover:border-red-600/60 hover:shadow-red-900/40 transition">
+          <div class="relative h-48 overflow-hidden bg-slate-900 flex items-center justify-center text-slate-700">
+            <i class="fa-solid fa-pen-nib text-5xl"></i>
+            <!-- Preview: guarda la imagen en img/ con este nombre -->
+            <img src="img/inkscape-1.png" alt="Vista previa de Logo e Identidad" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-red-600/90 text-white text-[10px] font-bold">Inkscape</span>
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-base text-slate-100 mb-2">cultura visual</h4>
+            <h4 class="font-bold text-base text-slate-100 mb-2">Diseñador: Julio Campos</h4>
+            <p class="text-xs text-slate-400 line-clamp-2 mb-4">Descripción corta del trabajo: Ilustración vectorial con identidad cultural, trazada con pluma Bézier y nodos en Inkscape.</p>
+            <div class="flex items-center justify-between pt-3 border-t border-slate-800">
+              <button onclick="openModal('cultura visual','Inkscape','Diseñar una ilustración vectorial con identidad cultural que funcione como imagen central de una marca o proyecto','Aprendí a dibujar contornos precisos con curvas Bézier, editar nodos y mantener el archivo ordenado con capas y grupos.','img/inkscape-1.png','img/inkscape-1.png','img/inkscape-1.png','image')"
+                class="text-xs text-gold-400 hover:text-gold-300 font-semibold transition">Ver trabajo</button>
+              <a href="img/inkscape-1.png" download class="text-xs text-slate-500 hover:text-slate-300 transition"><i class="fa-solid fa-download"></i> Original</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card inkscape bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl shadow-black/60 hover:border-red-600/60 hover:shadow-red-900/40 transition">
+          <div class="relative h-48 overflow-hidden bg-slate-900 flex items-center justify-center text-slate-700">
+            <i class="fa-solid fa-pen-nib text-5xl"></i>
+            <!-- Preview: guarda la imagen en img/ con este nombre -->
+            <img src="img/inkscape-2.jpg" alt="Vista previa de Ilustración Vectorial" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-red-600/90 text-white text-[10px] font-bold">Inkscape</span>
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-base text-slate-100 mb-2">unidad Salvadoreña</h4>
+            <h4 class="font-bold text-base text-slate-100 mb-2">Diseñador: Crista Ramírez</h4>
+            <p class="text-xs text-slate-400 line-clamp-2 mb-4">Descripción corta del trabajo: Escena low-poly en Inkscape que representa unidad y comunidad con polígonos y paleta limitada.</p>
+            <div class="flex items-center justify-between pt-3 border-t border-slate-800">
+              <button onclick="openModal('unidad Salvadoreña','Inkscape','Representar la unidad y la comunidad con un estilo geométrico de polígonos y una paleta de colores limitada.','Aprendí a crear volumen y profundidad con tonos claros y oscuros, y a construir figuras complejas a partir de formas simples.','img/inkscape-2.jpg','img/inkscape-2.jpg','img/inkscape-2.jpg','image')"
+                class="text-xs text-gold-400 hover:text-gold-300 font-semibold transition">Ver trabajo</button>
+              <a href="img/inkscape-2.jpg" download class="text-xs text-slate-500 hover:text-slate-300 transition"><i class="fa-solid fa-download"></i> Original</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card inkscape bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl shadow-black/60 hover:border-red-600/60 hover:shadow-red-900/40 transition">
+          <div class="relative h-48 overflow-hidden bg-slate-900 flex items-center justify-center text-slate-700">
+            <i class="fa-solid fa-pen-nib text-5xl"></i>
+            <!-- Preview: guarda la imagen en img/ con este nombre -->
+            <img src="img/inkscape-3.png" alt="Vista previa de Infografía" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-red-600/90 text-white text-[10px] font-bold">Inkscape</span>
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-base text-slate-100 mb-2">Paisajes vivos</h4>
+            <h4 class="font-bold text-base text-slate-100 mb-2">Diseñador: Marvin Medina</h4>
+            <p class="text-xs text-slate-400 line-clamp-2 mb-4">Descripción corta del trabajo: Paisaje con volcán, valle e iglesia ilustrado en Inkscape, organizado por planos y colores vivos.</p>
+            <div class="flex items-center justify-between pt-3 border-t border-slate-800">
+              <button onclick="openModal('Paisajes vivos','Inkscape','Ilustrar un paisaje de El Salvador con volcán, montañas y un pueblo con iglesia, logrando profundidad con colores cálidos y fríos.','Aprendí a organizar la escena por planos (primero, medio y fondo), crear profundidad con el color y escalar gráficos sin perder calidad.','img/inkscape-3.png','img/inkscape-3.svg','img/inkscape-3.png','image')"
+                class="text-xs text-gold-400 hover:text-gold-300 font-semibold transition">Ver trabajo</button>
+              <a href="img/inkscape-3.png" download class="text-xs text-slate-500 hover:text-slate-300 transition"><i class="fa-solid fa-download"></i> Original</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card audacity bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl shadow-black/60 hover:border-red-600/60 hover:shadow-red-900/40 transition">
+          <div class="relative h-48 overflow-hidden bg-slate-900 flex items-center justify-center text-slate-700">
+            <i class="fa-solid fa-wave-square text-5xl"></i>
+            <!-- Preview: guarda la imagen en img/ con este nombre -->
+            <img src="img/audacity-1.png" alt="Vista previa de Locución y Limpieza de Audio" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-yellow-600/90 text-white text-[10px] font-bold">Audacity</span>
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-base text-slate-100 mb-2">Locución y Limpieza de Audio</h4>
+            <h4 class="font-bold text-base text-slate-100 mb-2">Locutor: Pamela Bran</h4>
+            <p class="text-xs text-slate-400 line-clamp-2 mb-4">Descripción corta del trabajo:Grabación de una locución en Audacity, con reducción de ruido y ajuste de volumen. </p>
+          <audio controls preload="none" src="audio/audacity-1.mpeg" class="w-full h-9 mb-2"></audio>
+          <p class="text-[11px] text-slate-500 mb-4"><i class="fa-regular fa-clock mr-1"></i>Duración: 0:38</p>
+            <div class="flex items-center justify-between pt-3 border-t border-slate-800">
+              <button onclick="openModal('Locución y Limpieza de Audio','Audacity','Grabar una locución clara y limpia, eliminando el ruido de fondo y nivelando el volumen para que se escuche profesional.','Aprendí a usar la reducción de ruido, la normalización y el ecualizador, y a recortar y exportar audio en buena calidad.','img/audacity-1.png','audio/audacity-1.mpeg','audio/audacity-1.mpeg','audio')"
+                class="text-xs text-gold-400 hover:text-gold-300 font-semibold transition">Ver trabajo</button>
+              <a href="audio/audacity-1.mpeg" download class="text-xs text-slate-500 hover:text-slate-300 transition"><i class="fa-solid fa-download"></i> Original</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card audacity bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl shadow-black/60 hover:border-red-600/60 hover:shadow-red-900/40 transition">
+          <div class="relative h-48 overflow-hidden bg-slate-900 flex items-center justify-center text-slate-700">
+            <i class="fa-solid fa-wave-square text-5xl"></i>
+            <!-- Preview: guarda la imagen en img/ con este nombre -->
+            <img src="img/audacity-2.png" alt="Vista previa de Mezcla Musical" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-yellow-600/90 text-white text-[10px] font-bold">Audacity</span>
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-base text-slate-100 mb-2">Audio RadioNovela</h4>
+            <h4 class="font-bold text-base text-slate-100 mb-2">Locutor: Equipo de RadioNovela</h4>
+            <p class="text-xs text-slate-400 line-clamp-2 mb-4">Descripción corta del trabajo: Montaje de una radionovela en Audacity, con varias voces, pistas y efectos de sonido.</p>
+          <audio controls preload="none" src="audio/audacity-2.mp3" class="w-full h-9 mb-2"></audio>
+          <p class="text-[11px] text-slate-500 mb-4"><i class="fa-regular fa-clock mr-1"></i>Duración: 4:16</p>
+            <div class="flex items-center justify-between pt-3 border-t border-slate-800">
+              <button onclick="openModal('Audio RadioNovela','Audacity','Producir una radionovela combinando voces de varios locutores, música y efectos para contar una historia solo con sonido.','Aprendí a trabajar con varias pistas, sincronizar voces y efectos, y equilibrar los volúmenes para que el relato se entienda.','img/audacity-2.png','audio/audacity-2.mp3','audio/audacity-2.mp3','audio')"
+                class="text-xs text-gold-400 hover:text-gold-300 font-semibold transition">Ver trabajo</button>
+              <a href="audio/audacity-2.mp3" download class="text-xs text-slate-500 hover:text-slate-300 transition"><i class="fa-solid fa-download"></i> Original</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card video bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl shadow-black/60 hover:border-red-600/60 hover:shadow-red-900/40 transition">
+          <div class="relative h-48 overflow-hidden bg-slate-900 flex items-center justify-center text-slate-700">
+            <i class="fa-solid fa-video text-5xl"></i>
+            <!-- Preview: guarda la imagen en img/ con este nombre -->
+            <img src="video/video-1.png" alt="Vista previa de Video Corto 1" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-rose-600/90 text-white text-[10px] font-bold">OpenShot</span>
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-base text-slate-100 mb-2">RadioNovela AudioVideo</h4>
+            <h4 class="font-bold text-base text-slate-100 mb-2">Locutor: Equipo de RadioNovela</h4>
+            <p class="text-xs text-slate-400 line-clamp-2 mb-4">Descripción corta del trabajo: Versión en video de la radionovela "Ecos de un Adiós", una historia dramática sobre una despedida, hecha en OpenShot.</p>
+          <p class="text-[11px] text-slate-500 mb-4"><i class="fa-regular fa-clock mr-1"></i>Duración: 4:16</p>
+            <div class="flex items-center justify-between pt-3 border-t border-slate-800">
+              <button onclick="openModal('RadioNovela AudioVideo','OpenShot','Llevar la radionovela a video para que la historia se pueda ver y escuchar juntas, manteniendo su tono dramático.','Aprendí a sincronizar el audio con las imágenes en la línea de tiempo y a exportar audio y video juntos.','img/video-1.jpg','video/video-1.mp4','video/video-1.mp4','video')"
+                class="text-xs text-gold-400 hover:text-gold-300 font-semibold transition">Ver trabajo</button>
+              <a href="video/video-1.mp4" download class="text-xs text-slate-500 hover:text-slate-300 transition"><i class="fa-solid fa-download"></i> Original</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card video bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl shadow-black/60 hover:border-red-600/60 hover:shadow-red-900/40 transition">
+          <div class="relative h-48 overflow-hidden bg-slate-900 flex items-center justify-center text-slate-700">
+            <i class="fa-solid fa-video text-5xl"></i>
+            <!-- Preview: guarda la imagen en img/ con este nombre -->
+            <img src="video/video-2.png" alt="Vista previa de Video Corto 2" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-rose-600/90 text-white text-[10px] font-bold">OpenShot</span>
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-base text-slate-100 mb-2">Representación Navideña</h4>
+            <h4 class="font-bold text-base text-slate-100 mb-2">Editor: Marvin Medina</h4>
+            <p class="text-xs text-slate-400 line-clamp-2 mb-4">Descripción corta del trabajo: Video navideño hecho en OpenShot con un mensaje cálido sobre la unión y la esperanza de estas fechas.</p>
+          <p class="text-[11px] text-slate-500 mb-4"><i class="fa-regular fa-clock mr-1"></i>Duración: 0:57</p>
+            <div class="flex items-center justify-between pt-3 border-t border-slate-800">
+              <button onclick="openModal('Representación Navideña','OpenShot','Transmitir el espíritu de la Navidad con un video corto, de ambiente tranquilo y elegante.','Aprendí a editar en la línea de tiempo, a aplicar efectos de brillo, a superponer clips y a cuidar el contraste entre luces y fondo.','img/video-2.jpg','video/video-2.mp4','video/video-2.mp4','video')"
+                class="text-xs text-gold-400 hover:text-gold-300 font-semibold transition">Ver trabajo</button>
+              <a href="video/video-2.mp4" download class="text-xs text-slate-500 hover:text-slate-300 transition"><i class="fa-solid fa-download"></i> Original</a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="project-card video bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl shadow-black/60 hover:border-red-600/60 hover:shadow-red-900/40 transition">
+          <div class="relative h-48 overflow-hidden bg-slate-900 flex items-center justify-center text-slate-700">
+            <i class="fa-solid fa-video text-5xl"></i>
+            <!-- Preview: guarda la imagen en img/ con este nombre -->
+            <img src="video/video-3.png" alt="Vista previa de Video Corto 2" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-rose-600/90 text-white text-[10px] font-bold">OpenShot</span>
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-base text-slate-100 mb-2">Representación Navideña</h4>
+            <h4 class="font-bold text-base text-slate-100 mb-2">Editor: Hector Vásquez</h4>
+            <p class="text-xs text-slate-400 line-clamp-2 mb-4">Descripción corta del trabajo: Video de felicitación navideña hecho en OpenShot, con un mensaje alegre para desear felices fiestas.</p>
+          <p class="text-[11px] text-slate-500 mb-4"><i class="fa-regular fa-clock mr-1"></i>Duración: 1:51</p>
+            <div class="flex items-center justify-between pt-3 border-t border-slate-800">
+              <button onclick="openModal('Representación Navideña','OpenShot','Crear un saludo festivo en video, con un mensaje claro y un ambiente alegre propio de la temporada.','Aprendí a superponer capas de imagen y texto, a animar el mensaje y a mantener una paleta de colores acorde a la temporada.','img/video-3.mp4','video/video-3.mp4','video/video-3.mp4','video')"
+                class="text-xs text-gold-400 hover:text-gold-300 font-semibold transition">Ver trabajo</button>
+              <a href="video/video-3.mp4" download class="text-xs text-slate-500 hover:text-slate-300 transition"><i class="fa-solid fa-download"></i> Original</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card campana bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl shadow-black/60 hover:border-red-600/60 hover:shadow-red-900/40 transition">
+          <div class="relative h-48 overflow-hidden bg-slate-900 flex items-center justify-center text-slate-700">
+            <i class="fa-solid fa-bullhorn text-5xl"></i>
+            <!-- Preview: guarda la imagen en img/ con este nombre -->
+            <img src="img/campaña-1..jpeg" alt="Vista previa de Campaña Publicitaria Integrada" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-orange-600/90 text-white text-[10px] font-bold">Campaña</span>
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-base text-slate-100 mb-2">Campaña Editorial</h4>
+            <h4 class="font-bold text-base text-slate-100 mb-2">Editor: Hector Vásquez</h4>
+            <p class="text-xs text-slate-400 line-clamp-2 mb-4">Descripción corta del trabajo: Campaña sobre las tendencias de moda actuales, que une artesanía y tradición con diseño moderno.</p>
+            <div class="flex items-center justify-between pt-3 border-t border-slate-800">
+              <button onclick="openModal('Campaña Editorial','Campaña','Comunicar con claridad un mensaje de campaña sobre moda, mostrando cómo las técnicas tradicionales se mezclan con propuestas nuevas.','Aprendí a organizar texto e imágenes en una pieza ordenada y a mantener la jerarquía visual para que el mensaje se lea fácil.','img/campaña-1..jpeg','img/campaña-1..jpeg','img/campaña-1..jpeg','img')"
+                class="text-xs text-gold-400 hover:text-gold-300 font-semibold transition">Ver trabajo</button>
+              <a href="img/campaña-1..jpeg" download class="text-xs text-slate-500 hover:text-slate-300 transition"><i class="fa-solid fa-download"></i> Original</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card campana bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl shadow-black/60 hover:border-red-600/60 hover:shadow-red-900/40 transition">
+          <div class="relative h-48 overflow-hidden bg-slate-900 flex items-center justify-center text-slate-700">
+            <i class="fa-solid fa-bullhorn text-5xl"></i>
+            <!-- Preview: guarda la imagen en img/ con este nombre -->
+            <img src="img/campaña-2.jpeg" alt="Vista previa de Campaña Publicitaria Integrada" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-orange-600/90 text-white text-[10px] font-bold">Campaña</span>
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-base text-slate-100 mb-2">Noticias de Moda</h4>
+            <h4 class="font-bold text-base text-slate-100 mb-2">Editor: Hector Vásquez</h4>
+            <p class="text-xs text-slate-400 line-clamp-2 mb-4">Descripción corta del trabajo: Nota periodística sobre las tendencias de moda 2025: siluetas fluidas, tejidos suaves y moda consciente en las pasarelas internacionales.</p>
+            <div class="flex items-center justify-between pt-3 border-t border-slate-800">
+              <button onclick="openModal('Noticias de Moda','Campaña','Diseñar una página de noticias que informe sobre las tendencias de moda de forma clara, con titulares, columnas de texto e imágenes de pasarela.','Aprendí a maquetar una nota informativa, a organizar el texto en columnas y a jerarquizar titulares, subtítulos e imágenes para que se lea con facilidad.','img/campaña-2.jpeg','docs/campaña-2.jpeg','docs/campaña-2.jpeg','image')"
+                class="text-xs text-gold-400 hover:text-gold-300 font-semibold transition">Ver trabajo</button>
+              <a href="img/campaña-2.jpeg" download class="text-xs text-slate-500 hover:text-slate-300 transition"><i class="fa-solid fa-download"></i> Original</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card campana bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl shadow-black/60 hover:border-red-600/60 hover:shadow-red-900/40 transition">
+          <div class="relative h-48 overflow-hidden bg-slate-900 flex items-center justify-center text-slate-700">
+            <i class="fa-solid fa-bullhorn text-5xl"></i>
+            <!-- Preview: guarda la imagen en img/ con este nombre -->
+            <img src="img/campaña-3.png" alt="Vista previa de Campaña Publicitaria Integrada" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-orange-600/90 text-white text-[10px] font-bold">Campaña</span>
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-base text-slate-100 mb-2">Dia de la Felicidad</h4>
+            <h4 class="font-bold text-base text-slate-100 mb-2">Editor: Kevin Amaya</h4>
+            <p class="text-xs text-slate-400 line-clamp-2 mb-4">Descripción corta del trabajo: Campaña para el Día de la Felicidad que transmite alegría y unión con personajes ilustrados celebrando juntos.</p>
+            <div class="flex items-center justify-between pt-3 border-t border-slate-800">
+              <button onclick="openModal('Dia de la Felicidad','Campaña','Crear una pieza de campaña que invite a celebrar la felicidad, con un mensaje positivo y una ilustración cercana.','Aprendí a combinar ilustración, color y tipografía para transmitir una emoción, y a mantener un estilo alegre y coherente en toda la pieza.','img/campaña-3.png','img/campaña-3.png','img/campaña-3.png','image')"
+                class="text-xs text-gold-400 hover:text-gold-300 font-semibold transition">Ver trabajo</button>
+              <a href="img/campaña-3.png" download class="text-xs text-slate-500 hover:text-slate-300 transition"><i class="fa-solid fa-download"></i> Original</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card campana bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl shadow-black/60 hover:border-red-600/60 hover:shadow-red-900/40 transition">
+          <div class="relative h-48 overflow-hidden bg-slate-900 flex items-center justify-center text-slate-700">
+            <i class="fa-solid fa-bullhorn text-5xl"></i>
+            <!-- Preview: guarda la imagen en img/ con este nombre -->
+            <img src="img/campaña-4.jpg" alt="Vista previa de Campaña Publicitaria Integrada" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-orange-600/90 text-white text-[10px] font-bold">Campaña</span>
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-base text-slate-100 mb-2">Manual de Identidad Empresarial</h4>
+            <h4 class="font-bold text-base text-slate-100 mb-2">Editor: Kevin Amaya</h4>
+            <p class="text-xs text-slate-400 line-clamp-2 mb-4">Descripción corta del trabajo: Manual de marca de Napoli Autentica, una pizzería de tradición napolitana, con su logo, colores y normas de uso.</p>
+            <div class="flex items-center justify-between pt-3 border-t border-slate-800">
+              <button onclick="openModal('Manual de Identidad Empresarial','Campaña','Definir la identidad visual de la marca y reunirla en un documento que guíe cómo usar el logo, los colores y las tipografías.','Aprendí qué elementos forman un manual de marca, a mantener la coherencia visual y a presentar las normas de forma ordenada y profesional.','img/campaña-4.jpg','docs/campaña-4.pdf','docs/campaña-4.pdf','pdf')"
+                class="text-xs text-gold-400 hover:text-gold-300 font-semibold transition">Ver trabajo</button>
+              <a href="docs/campaña-4.pdf" download class="text-xs text-slate-500 hover:text-slate-300 transition"><i class="fa-solid fa-download"></i> Original</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card campana bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl shadow-black/60 hover:border-red-600/60 hover:shadow-red-900/40 transition">
+          <div class="relative h-48 overflow-hidden bg-slate-900 flex items-center justify-center text-slate-700">
+            <i class="fa-solid fa-bullhorn text-5xl"></i>
+            <!-- Preview: guarda la imagen en img/ con este nombre -->
+            <img src="img/campaña-5.jpeg" alt="Vista previa de Campaña Publicitaria Integrada" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-orange-600/90 text-white text-[10px] font-bold">Campaña</span>
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-base text-slate-100 mb-2">Identidad Visual</h4>
+            <h4 class="font-bold text-base text-slate-100 mb-2">Editor: Hector Vásquez</h4>
+            <p class="text-xs text-slate-400 line-clamp-2 mb-4">Descripción corta del trabajo: Pieza publicitaria que reinterpreta la imagen de una marca de bebidas mezclándola con un personaje de ficción.</p>
+            <div class="flex items-center justify-between pt-3 border-t border-slate-800">
+              <button onclick="openModal('Identidad Visual','Campaña','Crear una imagen publicitaria de impacto que asocie una marca reconocida con un personaje, usando el color y la composición para llamar la atención.','Aprendí a integrar un personaje y un producto en una sola composición, a usar el color de la marca como base y a crear un punto focal fuerte.','img/campaña-5.jpeg','docs/campaña-5.pdf','docs/campaña-5.pdf','pdf')"
+                class="text-xs text-gold-400 hover:text-gold-300 font-semibold transition">Ver trabajo</button>
+              <a href="docs/campaña-5.pdf" download class="text-xs text-slate-500 hover:text-slate-300 transition"><i class="fa-solid fa-download"></i> Original</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card campana bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl shadow-black/60 hover:border-red-600/60 hover:shadow-red-900/40 transition">
+          <div class="relative h-48 overflow-hidden bg-slate-900 flex items-center justify-center text-slate-700">
+            <i class="fa-solid fa-bullhorn text-5xl"></i>
+            <!-- Preview: guarda la imagen en img/ con este nombre -->
+            <img src="img/campaña-6.png" alt="Vista previa de Campaña Publicitaria Integrada" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-orange-600/90 text-white text-[10px] font-bold">Campaña</span>
+          </div>
+          <div class="p-6">
+            <h4 class="font-bold text-base text-slate-100 mb-2">ODS Energia Renovable</h4>
+            <h4 class="font-bold text-base text-slate-100 mb-2">Editor: Kevin Amaya</h4>
+            <p class="text-xs text-slate-400 line-clamp-2 mb-4">Descripción corta del trabajo: Presentación de un proyecto de energía eólica que convierte la fuerza del viento en electricidad limpia para la red nacional.</p>
+            <div class="flex items-center justify-between pt-3 border-t border-slate-800">
+              <button onclick="openModal('ODS Energia Renovable','Campaña','Dar a conocer un proyecto de energía renovable alineado con los Objetivos de Desarrollo Sostenible, resaltando su aporte a la demanda eléctrica y sus beneficios ambientales.','Aprendí a presentar datos técnicos de forma clara, a destacar beneficios con una estructura ordenada y a relacionar un proyecto con los ODS.','img/campaña-6.png','docs/campaña-6.pdf','docs/campaña-6.pdf','pdf')"
+                class="text-xs text-gold-400 hover:text-gold-300 font-semibold transition">Ver trabajo</button>
+              <a href="docs/campaña-6.pdf" download class="text-xs text-slate-500 hover:text-slate-300 transition"><i class="fa-solid fa-download"></i> Original</a>
+            </div>
+          </div>
+        </div>
+
+
+    </div>
+  </div>
+</section>
+
+<div class="film-strip" aria-hidden="true"></div>
+
+<!-- SECTION 5: CRÉDITOS -->
+<section id="creditos" class="py-16 bg-slate-950">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="ticket bg-slate-900 border border-slate-800 rounded-2xl p-8 text-center shadow-xl">
+      <h2 class="text-xs font-bold uppercase tracking-widest text-gold-400 mb-2">Créditos Finales</h2>
+      <h3 class="text-2xl font-extrabold text-white mb-6">Software de Diseño y Edición Multimedia</h3>
+      <dl class="grid sm:grid-cols-2 gap-4 text-sm text-left">
+        <div class="bg-slate-950 border border-slate-800 rounded-xl p-4"><dt class="text-xs text-slate-500">Docente</dt><dd class="text-slate-200 font-semibold">Franklin Geovany Buruca Hernandez</dd></div>
+        <div class="bg-slate-950 border border-slate-800 rounded-xl p-4"><dt class="text-xs text-slate-500">Facultad</dt><dd class="text-slate-200 font-semibold">Tecnología e Innovación</dd></div>
+        <div class="bg-slate-950 border border-slate-800 rounded-xl p-4"><dt class="text-xs text-slate-500">Ciclo académico</dt><dd class="text-slate-200 font-semibold">[Ciclo 02-2026]</dd></div>
+        <div class="bg-slate-950 border border-slate-800 rounded-xl p-4"><dt class="text-xs text-slate-500">Fecha de presentación</dt><dd class="text-slate-200 font-semibold">7 de diciembre de 2026</dd></div>
+      </dl>
+      <!-- CAMBIA el enlace por el de tu repositorio -->
+      <a href="https://github.com/kevinamaya0612-a11y/StoryLine2026.git" target="_blank" class="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold border border-slate-700 transition text-sm">
+        <i class="fa-brands fa-github text-lg"></i> Ver repositorio en GitHub
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="py-6 bg-slate-950 text-slate-500 text-xs text-center border-t border-slate-900">
+  <p>© 2026 Universidad Dr. Andrés Bello — Facultad de Tecnología e Innovación. Todos los derechos reservados.</p>
+</footer>
+
+<!-- MODAL -->
+<div id="project-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+  <div class="bg-slate-900 border border-slate-800 w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl relative">
+    <!-- Header del modal -->
+    <div class="px-6 py-4 border-b border-slate-800 flex justify-between items-center bg-slate-950">
+      <div>
+        <span id="modal-tool" class="text-[10px] font-bold uppercase tracking-wider text-gold-400">Herramienta</span>
+        <h3 id="modal-title" class="text-lg font-bold text-white mt-1">Título</h3>
+      </div>
+      <button onclick="closeModal()" aria-label="Cerrar" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
+    </div>
+    <!-- Cuerpo -->
+    <div class="p-6 space-y-4 max-h-[75vh] overflow-y-auto">
+      <div id="modal-media-container" class="w-full h-[55vh] rounded-xl overflow-hidden bg-black border border-slate-800 flex items-center justify-center"></div>
+      <p class="viewer-note">Si el documento no se ve bien en tu celular, usa "Abrir en otra pestaña".</p>
+      <div>
+        <h5 class="text-xs font-bold text-slate-300 mb-1">Objetivo del Ejercicio:</h5>
+        <p id="modal-objective" class="text-sm text-slate-400">...</p>
+      </div>
+      <div>
+        <h5 class="text-xs font-bold text-slate-300 mb-1">Qué se Aprendió:</h5>
+        <p id="modal-learning" class="text-sm text-slate-400">...</p>
+      </div>
+    </div>
+    <!-- Footer del modal -->
+    <div class="px-6 py-4 border-t border-slate-800 bg-slate-950 flex justify-between items-center">
+      <div class="flex flex-wrap gap-4">
+        <a id="modal-open-tab" href="#" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-400 hover:text-gold-300"><i class="fa-solid fa-up-right-from-square mr-1"></i> Abrir en otra pestaña</a>
+        <a id="modal-download" href="#" download class="text-xs font-semibold text-slate-400 hover:text-slate-200"><i class="fa-solid fa-download mr-1"></i> Descargar archivo original</a>
+      </div>
+      <button onclick="closeModal()" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// 1. Menú móvil
+const menuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+// 2. Filtrado de proyectos
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => {
+      b.classList.remove('bg-blue-600', 'text-white');
+      b.classList.add('bg-slate-800', 'text-slate-300');
+    });
+    btn.classList.remove('bg-slate-800', 'text-slate-300');
+    btn.classList.add('bg-blue-600', 'text-white');
+    const filter = btn.getAttribute('data-filter');
+    projectCards.forEach(card => {
+      card.style.display = (filter === 'all' || card.classList.contains(filter)) ? 'block' : 'none';
+    });
+  });
+});
+
+// 3. Modal con visor de documentos
+// mediaType: 'image' | 'pdf' | 'video' | 'audio' | 'embed'
+//   image -> JPG, PNG, SVG, GIF      pdf   -> PDF de varias páginas (se desplaza dentro del visor)
+//   video -> MP4/WebM                 audio -> MP3
+//   embed -> enlace para incrustar (YouTube: https://www.youtube.com/embed/ID, Drive: https://drive.google.com/file/d/ID/preview)
+const modal = document.getElementById('project-modal');
+const mediaBox = document.getElementById('modal-media-container');
+
+function openModal(title, tool, objective, learning, imageSrc, downloadUrl, mediaSrc, mediaType) {
+  document.getElementById('modal-title').innerText = title;
+  document.getElementById('modal-tool').innerText = tool;
+  document.getElementById('modal-objective').innerText = objective;
+  document.getElementById('modal-learning').innerText = learning;
+  const file = mediaSrc || downloadUrl || imageSrc || '#';
+  document.getElementById('modal-download').href = downloadUrl || file;
+  document.getElementById('modal-open-tab').href = file;
+
+  const fallback = '<div class="text-center text-slate-500 text-sm p-6"><i class="fa-solid fa-film text-4xl mb-3 block"></i>Aún no hay archivo en <code class="text-gold-400">' + file + '</code></div>';
+  let el;
+  if (mediaType === 'pdf') {
+    el = document.createElement('iframe'); el.src = file + '#view=FitH'; el.title = title;
+  } else if (mediaType === 'embed') {
+    el = document.createElement('iframe'); el.src = file; el.title = title; el.allowFullscreen = true;
+    el.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+  } else if (mediaType === 'video') {
+    el = document.createElement('video'); el.controls = true; el.preload = 'metadata'; el.src = file;
+    if (imageSrc) el.poster = imageSrc;
+  } else if (mediaType === 'audio') {
+    el = document.createElement('audio'); el.controls = true; el.src = file; el.className = 'w-11/12';
+  } else {
+    el = document.createElement('img'); el.src = file; el.alt = title;
+  }
+  // Si el archivo no existe, muestra un aviso en lugar de un recuadro vacío
+  el.addEventListener('error', () => { mediaBox.innerHTML = fallback; });
+  mediaBox.replaceChildren(el);
+
+  modal.classList.remove('hidden');
+  document.body.classList.add('modal-open');
+}
+
+function closeModal() {
+  mediaBox.querySelectorAll('video,audio').forEach(m => m.pause());
+  mediaBox.replaceChildren();   // detiene también los videos incrustados
+  modal.classList.add('hidden');
+  document.body.classList.remove('modal-open');
+}
+
+// Cerrar al hacer clic fuera o con Escape
+modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+</script>
+</body>
+</html>

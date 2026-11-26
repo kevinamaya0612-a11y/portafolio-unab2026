@@ -1,0 +1,22 @@
+ARCHIVOS
+- index.html  -> estructura y textos
+- styles.css  -> estilos de cine (colores, telón, marquesina, etc.)
+- img/ audio/ video/ docs/ -> tus archivos
+
+CÓMO USAR
+1. Abre index.html en el navegador (necesita internet para Tailwind y los íconos).
+2. Reemplaza los textos entre [corchetes]: equipo, carrera, docente, ciclo. Pon el enlace de tu GitHub (2 veces).
+3. Fotos del equipo: img/integrante-1.jpg ... integrante-10.jpg. Logo: img/logo.svg
+
+VER TRABAJOS DENTRO DE LA PÁGINA
+El botón "Ver trabajo" abre un visor en la misma página. En cada tarjeta, el botón tiene al final:
+   onclick="openModal(título, herramienta, objetivo, aprendizaje, miniatura, archivo_descarga, archivo_visor, TIPO)"
+TIPO puede ser:
+   'image' -> JPG, PNG, SVG     'pdf'   -> PDF de varias páginas (se desplaza dentro del visor)
+   'video' -> MP4               'audio' -> MP3
+   'embed' -> video de YouTube (https://www.youtube.com/embed/ID) o archivo de Drive (https://drive.google.com/file/d/ID/preview)
+Ejemplo para un PDF:  ...,'docs/mi-trabajo.pdf','docs/mi-trabajo.pdf','pdf')
+Videos pesados: súbelos a YouTube (no listado) y usa 'embed'. GitHub no admite archivos de más de 100 MB.
+
+PUBLICAR
+Sube la carpeta a GitHub > Settings > Pages.

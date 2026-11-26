@@ -1,0 +1,81 @@
+/* =====================================================================
+ESTILOS PERSONALIZADOS (ambiente de cine)
+Tailwind sigue cargándose desde el CDN en index.html
+   ===================================================================== */
+  /* ===== AMBIENTE DE CINE ===== */
+  /* Grano de película + viñeta sobre toda la página */
+  body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.07;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:59;
+    background:radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.55) 100%)}
+
+  /* Telón: cortinas laterales + cenefa superior */
+  .drape{position:absolute;top:0;bottom:0;width:clamp(36px,9vw,150px);z-index:1;pointer-events:none;
+    background:repeating-linear-gradient(90deg,#3a0505 0,#a61616 11px,#5e0a0a 22px,#260303 34px);
+    box-shadow:inset 0 0 40px rgba(0,0,0,.65)}
+  .drape.l{left:0;-webkit-mask-image:linear-gradient(90deg,#000 55%,transparent);mask-image:linear-gradient(90deg,#000 55%,transparent)}
+  .drape.r{right:0;-webkit-mask-image:linear-gradient(270deg,#000 55%,transparent);mask-image:linear-gradient(270deg,#000 55%,transparent)}
+  .valance{position:absolute;top:0;left:0;right:0;z-index:2;pointer-events:none;filter:drop-shadow(0 10px 14px rgba(0,0,0,.8))}
+  .valance .bar{height:30px;background:#8a1010;border-bottom:3px solid #c9a227;
+    background-image:repeating-linear-gradient(90deg,rgba(0,0,0,.35) 0 2px,transparent 2px 40px,rgba(255,255,255,.07) 40px 42px)}
+  .valance .scallops{height:20px;background:radial-gradient(circle at 50% 0,#8a1010 19px,transparent 20px) 0 0/40px 20px repeat-x}
+
+  /* Foco de escenario */
+  .beam{position:absolute;top:0;left:50%;width:min(900px,100%);height:100%;transform:translateX(-50%);pointer-events:none;
+    background:radial-gradient(ellipse 45% 70% at 50% 0,rgba(255,236,180,.16),transparent 70%)}
+
+  /* Marco de bombillas (marquesina) */
+  .marquee-frame::before{content:"";position:absolute;inset:-12px;border:7px dotted #f6e3a1;border-radius:2rem;pointer-events:none;
+    filter:drop-shadow(0 0 5px rgba(246,227,161,.9)) drop-shadow(0 0 12px rgba(220,38,38,.6));animation:bulbs 1.6s steps(2,jump-none) infinite}
+  @keyframes bulbs{0%{opacity:1}50%{opacity:.55}100%{opacity:1}}
+
+  /* Cinta de película con perforaciones */
+  .film-strip{height:36px;background:#0b0708;border-block:2px solid #3a2a2c;
+    background-image:linear-gradient(90deg,#efe2b4 0 18px,transparent 18px),linear-gradient(90deg,#efe2b4 0 18px,transparent 18px);
+    background-size:36px 12px,36px 12px;background-repeat:repeat-x;background-position:9px 4px,9px 20px;box-shadow:0 0 24px rgba(0,0,0,.9)}
+
+  /* Cinta de texto en movimiento (cartelera) */
+  .ticker{background:#0b0708;border-block:2px solid #c9a227;overflow:hidden;white-space:nowrap;position:relative;z-index:3;
+    box-shadow:0 0 30px rgba(220,38,38,.35)}
+  .ticker div{display:inline-block;padding:.7rem 0;color:#e6bf5a;font-weight:800;letter-spacing:.35em;font-size:.8rem;text-transform:uppercase;
+    animation:ticker 28s linear infinite;text-shadow:0 0 10px rgba(201,162,39,.55)}
+  @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* Fondos de sección */
+  #equipo{background:radial-gradient(ellipse 50% 60% at 50% 0,rgba(255,236,180,.12),transparent 70%),#080607}
+  #portafolio{background:radial-gradient(ellipse at 50% 0,rgba(153,27,27,.55),transparent 65%),linear-gradient(#1a0809,#0d0607)}
+  #creditos{background:radial-gradient(ellipse at 50% 100%,rgba(153,27,27,.4),transparent 60%),#080607}
+
+  /* Títulos con ornamento dorado */
+  #equipo h3.text-3xl,#portafolio h3.text-3xl{text-shadow:0 2px 18px rgba(201,162,39,.4)}
+  #equipo h3.text-3xl::after,#portafolio h3.text-3xl::after{content:"★ ★ ★";display:block;color:#c9a227;font-size:.7rem;letter-spacing:.7em;margin-top:.7rem}
+
+  /* Tarjetas de proyecto como pósters enmarcados */
+  .project-card{border:1px solid rgba(201,162,39,.45)!important;
+    box-shadow:0 0 0 4px #0b0708,0 0 0 5px rgba(201,162,39,.5),0 22px 40px rgba(0,0,0,.8)!important;transition:transform .3s,box-shadow .3s}
+  .project-card:hover{transform:translateY(-4px);box-shadow:0 0 0 4px #0b0708,0 0 0 5px #e6bf5a,0 24px 50px rgba(220,38,38,.35)!important}
+  .project-card > div:first-child::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 50%,rgba(8,6,7,.85));pointer-events:none}
+  .project-card > div:first-child > span{z-index:2}
+
+  /* Tarjetas del equipo: foto con aro dorado y foco */
+  #equipo .group{background:linear-gradient(#1a1214,#0d0809)!important;border-color:rgba(201,162,39,.25)!important}
+  #equipo .group:hover{box-shadow:0 0 28px rgba(220,38,38,.3)}
+  #equipo .group > div:first-child{border-color:#c9a227!important;box-shadow:0 0 0 3px #0b0708,0 0 0 4px rgba(201,162,39,.5),0 0 20px rgba(201,162,39,.25)}
+
+  /* Créditos como boleto de cine */
+  .ticket{position:relative;border:2px dashed rgba(201,162,39,.6)!important;background:linear-gradient(135deg,#1c1012,#0d0809)!important}
+  .ticket::before,.ticket::after{content:"";position:absolute;top:50%;width:30px;height:30px;margin-top:-15px;border-radius:50%;background:#080607;border:2px solid rgba(201,162,39,.6)}
+  .ticket::before{left:-16px;clip-path:inset(0 0 0 50%)} .ticket::after{right:-16px;clip-path:inset(0 50% 0 0)}
+
+  /* Barra de navegación y título principal */
+  nav{box-shadow:0 8px 30px rgba(0,0,0,.8);border-bottom-color:rgba(201,162,39,.5)!important}
+  h1 span{filter:drop-shadow(0 4px 20px rgba(201,162,39,.45))}
+  #project-modal > div{border-color:rgba(201,162,39,.5)!important;box-shadow:0 0 60px rgba(220,38,38,.35)}
+
+  @media (prefers-reduced-motion:reduce){.ticker div,.marquee-frame::before{animation:none}}
+
+/* Visor de documentos dentro del modal */
+#modal-media-container iframe,#modal-media-container video{width:100%;height:100%;border:0;background:#000}
+#modal-media-container img{width:100%;height:100%;object-fit:contain;background:#000}
+.viewer-note{font-size:.7rem;color:#8a8075}
+body.modal-open{overflow:hidden}
